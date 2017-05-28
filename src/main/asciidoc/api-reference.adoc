@@ -1,0 +1,8 @@
+== API Reference
+
+include::./retrieve-all-employees.adoc[]
+include::./retrieve-one-employee.adoc[]
+include::./create-new-employee.adoc[]
+include::./update-one-employee.adoc[]
+include::./delete-one-employee.adoc[]
+

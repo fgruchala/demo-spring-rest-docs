@@ -1,0 +1,24 @@
+=== Retrieve one employee
+
+include::{snippets}/get-employee-tests/get_-by-id_-o-k/http-request.adoc[]
+include::{snippets}/get-employee-tests/get_-by-id_-o-k/httpie-request.adoc[]
+include::{snippets}/get-employee-tests/get_-by-id_-o-k/curl-request.adoc[]
+
+==== Request parameters
+
+include::{snippets}/get-employee-tests/get_-by-id_-o-k/path-parameters.adoc[]
+
+==== Response fields
+
+include::{snippets}/get-employee-tests/get_-by-id_-o-k/response-fields.adoc[]
+
+==== Examples
+===== Retrieve an employee
+
+include::{snippets}/get-employee-tests/get_-by-id_-o-k/http-request.adoc[]
+include::{snippets}/get-employee-tests/get_-by-id_-o-k/http-response.adoc[]
+
+===== Retrieve an employee that does not exist
+
+include::{snippets}/get-employee-tests/get_-by-id_-not-found_-k-o/http-request.adoc[]
+include::{snippets}/get-employee-tests/get_-by-id_-not-found_-k-o/http-response.adoc[]

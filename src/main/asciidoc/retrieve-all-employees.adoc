@@ -1,0 +1,20 @@
+=== Retrieve all employees
+
+include::{snippets}/get-employees-tests/get_-all_-multi_-o-k/http-request.adoc[]
+include::{snippets}/get-employees-tests/get_-all_-multi_-o-k/httpie-request.adoc[]
+include::{snippets}/get-employees-tests/get_-all_-multi_-o-k/curl-request.adoc[]
+
+==== Response fields
+
+include::{snippets}/get-employees-tests/get_-all_-multi_-o-k/response-fields.adoc[]
+
+==== Examples
+===== Retrieve multiple employees
+
+include::{snippets}/get-employees-tests/get_-all_-multi_-o-k/http-request.adoc[]
+include::{snippets}/get-employees-tests/get_-all_-multi_-o-k/http-response.adoc[]
+
+===== Retrieve zero employee
+
+include::{snippets}/get-employees-tests/get_-all_-zero_-o-k/http-request.adoc[]
+include::{snippets}/get-employees-tests/get_-all_-zero_-o-k/http-response.adoc[]

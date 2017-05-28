@@ -1,0 +1,15 @@
+== HTTP Status Code
+
+|===
+|Code|Description
+
+|200
+|Everything is OK.
+
+|404
+|Ressource is not found.
+
+|500
+|Something went wrong. Please contact your admin or reboot your PC.
+
+|===

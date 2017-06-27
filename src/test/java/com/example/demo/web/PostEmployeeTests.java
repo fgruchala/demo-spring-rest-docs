@@ -7,11 +7,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.BDDMockito;
 import org.springframework.http.MediaType;
-import org.springframework.restdocs.mockmvc.MockMvcRestDocumentation;
-import org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders;
-import org.springframework.restdocs.operation.preprocess.Preprocessors;
-import org.springframework.restdocs.payload.PayloadDocumentation;
-import org.springframework.restdocs.request.RequestDocumentation;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
@@ -45,13 +40,7 @@ public class PostEmployeeTests extends AbstractEmployeeWebService {
         resultActions
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON_UTF8))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.id", Matchers.is(employeeCreated.getId())))
-                .andDo(MockMvcRestDocumentation.document(
-                        "{class-name}/{method-name}",
-                        Preprocessors.preprocessRequest(Preprocessors.prettyPrint()),
-                        Preprocessors.preprocessResponse(Preprocessors.prettyPrint()),
-                        PayloadDocumentation.requestFields(fieldDescriptorsEmployeeCreate),
-                        PayloadDocumentation.responseFields(fieldDescriptorsEmployeeOnlyId)));
+                .andExpect(MockMvcResultMatchers.jsonPath("$.id", Matchers.is(employeeCreated.getId())));
     }
 
     @Test
@@ -69,7 +58,7 @@ public class PostEmployeeTests extends AbstractEmployeeWebService {
 
         // WHEN
         ResultActions resultActions = mockMvc.perform(
-                RestDocumentationRequestBuilders
+                MockMvcRequestBuilders
                         .post(URL + "/{id}", employeeUpdated.getId())
                         .contentType(MediaType.APPLICATION_JSON_UTF8)
                         .content(toJson(employeeToUpdate))
@@ -79,14 +68,7 @@ public class PostEmployeeTests extends AbstractEmployeeWebService {
         resultActions
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON_UTF8))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.id", Matchers.is(employeeUpdated.getId())))
-                .andDo(MockMvcRestDocumentation.document(
-                        "{class-name}/{method-name}",
-                        Preprocessors.preprocessRequest(Preprocessors.prettyPrint()),
-                        Preprocessors.preprocessResponse(Preprocessors.prettyPrint()),
-                        RequestDocumentation.pathParameters(parameterDescriptorsEmployeeId),
-                        PayloadDocumentation.requestFields(fieldDescriptorsEmployeeUpdate),
-                        PayloadDocumentation.responseFields(fieldDescriptorsEmployeeOnlyId)));
+                .andExpect(MockMvcResultMatchers.jsonPath("$.id", Matchers.is(employeeUpdated.getId())));
     }
 
     @Test
@@ -103,7 +85,7 @@ public class PostEmployeeTests extends AbstractEmployeeWebService {
 
         // WHEN
         ResultActions resultActions = mockMvc.perform(
-                RestDocumentationRequestBuilders
+                MockMvcRequestBuilders
                         .post(URL + "/{id}", id)
                         .contentType(MediaType.APPLICATION_JSON_UTF8)
                         .content(toJson(employeeToUpdate))
@@ -113,13 +95,7 @@ public class PostEmployeeTests extends AbstractEmployeeWebService {
         resultActions
                 .andExpect(MockMvcResultMatchers.status().isNotFound())
                 .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON_UTF8))
-                .andExpect(MockMvcResultMatchers.jsonPath("$.error", Matchers.is("Employee (ID 99) not found.")))
-                .andDo(MockMvcRestDocumentation.document(
-                        "{class-name}/{method-name}",
-                        Preprocessors.preprocessRequest(Preprocessors.prettyPrint()),
-                        Preprocessors.preprocessResponse(Preprocessors.prettyPrint()),
-                        RequestDocumentation.pathParameters(parameterDescriptorsEmployeeId),
-                        PayloadDocumentation.responseFields(fieldDescriptorsSimpleError)));
+                .andExpect(MockMvcResultMatchers.jsonPath("$.error", Matchers.is("Employee (ID 99) not found.")));
     }
 
 }

@@ -13,7 +13,7 @@ The goal is to show :
 
 ## You are here 
 
-**6-delete**
+**5-post**
 
 ## Contacts via ...
 * GitHub by opening an [issue](https://github.com/fgruchala/demo-spring-rest-docs/issues) with a label "Question" for example.

@@ -11,15 +11,10 @@ The goal is to show :
 * [Lombok](https://projectlombok.org/)
 * Love :sparkling_heart:
 
-## Branches 
-* **master** : the full demo with Spring Rest Docs ;
-* **2-insta-conf** : the installation and the configuration on a Spring Boot project (business and tests are implemented) ;
-* **3-simple-get** : generation of snippets for a GET Webservice (include response payload) ;
-* **4-advanced-get** : generation of snippets for a GET Webservice (include request param and response payload) ;
-* **5-post** : generation of snippets for a POST Webservice (include request param, request payload and response payload) ;
-* **6-delete** : generation of snippets for a GET Webservice (include request param and response payload) ;
-* **7-integ-my-docs** : inclusion of generated snippets in my doc and publish it in my project.
-
+## You are here
+ 
+**7-integ-my-docs**
+ 
 ## Contacts via ...
 * GitHub by opening an [issue](https://github.com/fgruchala/demo-spring-rest-docs/issues) with a label "Question" for example.
 * Twitter [@FGruchala](https://twitter.com/FGruchala)

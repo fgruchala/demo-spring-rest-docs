@@ -13,7 +13,7 @@ The goal is to show :
 
 ## You are here 
 
-**3-simple-get**
+**2-insta-conf**
 
 ## Contacts via ...
 * GitHub by opening an [issue](https://github.com/fgruchala/demo-spring-rest-docs/issues) with a label "Question" for example.

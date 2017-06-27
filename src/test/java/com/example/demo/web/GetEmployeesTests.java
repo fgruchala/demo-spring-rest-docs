@@ -37,8 +37,7 @@ public class GetEmployeesTests extends AbstractEmployeeWebService {
         resultActions
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON_UTF8))
-                .andExpect(MockMvcResultMatchers.jsonPath("$", Matchers.hasSize(0)))
-                .andDo(MockMvcRestDocumentation.document("{class-name}/{method-name}"));
+                .andExpect(MockMvcResultMatchers.jsonPath("$", Matchers.hasSize(0)));
     }
 
     @Test
@@ -68,11 +67,7 @@ public class GetEmployeesTests extends AbstractEmployeeWebService {
                 .andExpect(MockMvcResultMatchers.jsonPath("$[0].firstname", Matchers.is(employee1.getFirstname())))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[1].id", Matchers.is(employee2.getId())))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[1].name", Matchers.is(employee2.getName())))
-                .andExpect(MockMvcResultMatchers.jsonPath("$[1].firstname", Matchers.is(employee2.getFirstname())))
-                .andDo(MockMvcRestDocumentation.document(
-                        "{class-name}/{method-name}",
-                        Preprocessors.preprocessResponse(Preprocessors.prettyPrint()),
-                        PayloadDocumentation.responseFields(fieldDescriptorsEmployeeSummary)));
+                .andExpect(MockMvcResultMatchers.jsonPath("$[1].firstname", Matchers.is(employee2.getFirstname())));
     }
 
 }

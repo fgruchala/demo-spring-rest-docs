@@ -1,8 +1,0 @@
-= Demo for Spring Rest Docs
-François GRUCHALA <@FGruchala>
-:toc: left
-
-It's a demo to show what Spring Rest Docs can do :)
-
-include::./http-status-code.adoc[]
-include::./api-reference.adoc[]

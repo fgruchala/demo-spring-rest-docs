@@ -14,7 +14,6 @@ import org.springframework.restdocs.payload.PayloadDocumentation;
 import org.springframework.restdocs.request.RequestDocumentation;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.ResultActions;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 @RunWith(SpringRunner.class)
@@ -35,7 +34,7 @@ public class PostEmployeeTests extends AbstractEmployeeWebService {
 
         // WHEN
         ResultActions resultActions = mockMvc.perform(
-                MockMvcRequestBuilders
+                RestDocumentationRequestBuilders
                         .post(URL)
                         .contentType(MediaType.APPLICATION_JSON_UTF8)
                         .content(toJson(employeeToCreate))

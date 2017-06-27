@@ -66,20 +66,6 @@ public abstract class AbstractEmployeeWebService {
             PayloadDocumentation.fieldWithPath("firstname").description("Firstname of the employee.")
     };
 
-    protected FieldDescriptor[] fieldDescriptorsEmployeeCreate = new FieldDescriptor[] {
-            PayloadDocumentation.fieldWithPath("name").description("Name of the employee."),
-            PayloadDocumentation.fieldWithPath("firstname").description("Firstname of the employee.")
-    };
-
-    protected FieldDescriptor[] fieldDescriptorsEmployeeUpdate = new FieldDescriptor[] {
-            PayloadDocumentation.fieldWithPath("name").description("Name of the employee."),
-            PayloadDocumentation.fieldWithPath("firstname").description("Firstname of the employee.")
-    };
-
-    protected FieldDescriptor[] fieldDescriptorsEmployeeOnlyId = new FieldDescriptor[] {
-            PayloadDocumentation.fieldWithPath("id").description("Internal unique ID.")
-    };
-
     protected ParameterDescriptor[] parameterDescriptorsEmployeeId = new ParameterDescriptor[] {
             RequestDocumentation.parameterWithName("id").description("Internal unique ID.")
     };

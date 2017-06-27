@@ -12,8 +12,6 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.restdocs.payload.FieldDescriptor;
 import org.springframework.restdocs.payload.PayloadDocumentation;
-import org.springframework.restdocs.request.ParameterDescriptor;
-import org.springframework.restdocs.request.RequestDocumentation;
 import org.springframework.test.web.servlet.MockMvc;
 
 @WebMvcTest(com.example.demo.webservice.v1.EmployeeWebService.class)
@@ -50,38 +48,11 @@ public abstract class AbstractEmployeeWebService {
         return objectMapper.writeValueAsString(object);
     }
 
-    protected FieldDescriptor[] fieldDescriptorsSimpleError = new FieldDescriptor[] {
-            PayloadDocumentation.fieldWithPath("error").description("Single line that explain error.")
-    };
-
     protected FieldDescriptor[] fieldDescriptorsEmployeeSummary = new FieldDescriptor[] {
             PayloadDocumentation.fieldWithPath("[]").description("Array of employees."),
             PayloadDocumentation.fieldWithPath("[].id").description("Internal unique ID."),
             PayloadDocumentation.fieldWithPath("[].name").description("Name of the employee."),
             PayloadDocumentation.fieldWithPath("[].firstname").description("Firstname of the employee.")
-    };
-
-    protected FieldDescriptor[] fieldDescriptorsEmployeeDetails = new FieldDescriptor[] {
-            PayloadDocumentation.fieldWithPath("name").description("Name of the employee."),
-            PayloadDocumentation.fieldWithPath("firstname").description("Firstname of the employee.")
-    };
-
-    protected FieldDescriptor[] fieldDescriptorsEmployeeCreate = new FieldDescriptor[] {
-            PayloadDocumentation.fieldWithPath("name").description("Name of the employee."),
-            PayloadDocumentation.fieldWithPath("firstname").description("Firstname of the employee.")
-    };
-
-    protected FieldDescriptor[] fieldDescriptorsEmployeeUpdate = new FieldDescriptor[] {
-            PayloadDocumentation.fieldWithPath("name").description("Name of the employee."),
-            PayloadDocumentation.fieldWithPath("firstname").description("Firstname of the employee.")
-    };
-
-    protected FieldDescriptor[] fieldDescriptorsEmployeeOnlyId = new FieldDescriptor[] {
-            PayloadDocumentation.fieldWithPath("id").description("Internal unique ID.")
-    };
-
-    protected ParameterDescriptor[] parameterDescriptorsEmployeeId = new ParameterDescriptor[] {
-            RequestDocumentation.parameterWithName("id").description("Internal unique ID.")
     };
 
 }

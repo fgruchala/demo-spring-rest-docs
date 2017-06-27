@@ -7,11 +7,11 @@ import org.junit.runner.RunWith;
 import org.mockito.BDDMockito;
 import org.springframework.http.MediaType;
 import org.springframework.restdocs.mockmvc.MockMvcRestDocumentation;
+import org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders;
 import org.springframework.restdocs.operation.preprocess.Preprocessors;
 import org.springframework.restdocs.payload.PayloadDocumentation;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.ResultActions;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 import java.util.ArrayList;
@@ -29,7 +29,7 @@ public class GetEmployeesTests extends AbstractEmployeeWebService {
 
         // WHEN
         ResultActions resultActions = mockMvc.perform(
-                MockMvcRequestBuilders
+                RestDocumentationRequestBuilders
                         .get(URL)
                         .accept(MediaType.APPLICATION_JSON_UTF8));
 
@@ -54,7 +54,7 @@ public class GetEmployeesTests extends AbstractEmployeeWebService {
 
         // WHEN
         ResultActions resultActions = mockMvc.perform(
-                MockMvcRequestBuilders
+                RestDocumentationRequestBuilders
                         .get(URL)
                         .accept(MediaType.APPLICATION_JSON_UTF8));
 
